@@ -109,14 +109,14 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("a", a);
         SmartDashboard.putNumber("v", v);
         double limelightangle = 0;
-        double llheight = 40;
-        double targethight = 30;
+        double llheight = 30;
+        double targethight = 40;
         double angleToGoalDegrees = limelightangle + y; 
          double angleToGoalRadians = angleToGoalDegrees * (3.14159 / 180.0);
          double distanceFromLimelightToGoalInches = (targethight - llheight) / Math.tan(angleToGoalRadians);
-         SmartDashboard.putNumber("distance from target", -distanceFromLimelightToGoalInches);
+         SmartDashboard.putNumber("distance from target", distanceFromLimelightToGoalInches);
           SmartDashboard.putNumber("y", y);
-         if (-distanceFromLimelightToGoalInches > 50 && -distanceFromLimelightToGoalInches< 100){//20 is just a place holder
+         if (distanceFromLimelightToGoalInches > 50 && distanceFromLimelightToGoalInches< 100){//20 is just a place holder
           leftm1.set(ControlMode.PercentOutput, -0.25);
           leftm2.set(ControlMode.PercentOutput, -0.25);
           rightm1.set(ControlMode.PercentOutput,-0.25);
